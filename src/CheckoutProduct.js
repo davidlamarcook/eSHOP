@@ -1,20 +1,24 @@
 import React from "react";
 import './CheckoutProduct.css'
 
-function CheckoutProduct() {
+function CheckoutProduct({id, title, price, image, rating}) {
     return (
         <div className="checkoutProduct">
-                <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/910fKjb8awL.__AC_SX300_SY300_QL70_FMwebp_.jpg" 
+                <img src={image} 
                 alt="" className="checkoutProduct__image" />
 
                 <div className="checkoutProduct__info">
-                    <p className="checkoutProduct__title">Voova Laptop Bag 15.6 15 14 Inch Briefcase, Expandable Computer Shoulder Messenger Bag, Business Travel College School-Gray</p>
+                    <p className="checkoutProduct__title">{title}</p>
                     <p className="checkoutProduct__price">
                         <small>$</small>
-                        <strong>20</strong>
+                        <strong>{price}</strong>
                     </p>
                     <div className="checkoutProduct__rating">
-                        ⭐⭐
+                        {Array(rating)
+                        .fill()
+                        .map((_, i) => (
+                            <p>⭐</p>
+                        ))}
                     </div>
                     <button>Remove from Basket</button>
                 </div>
