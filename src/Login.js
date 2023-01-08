@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Login.css'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import { auth } from './firebase';
 
 function Login() {
-    let history = useNavigate();
+    let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
